@@ -1,0 +1,58 @@
+@use "base/mixins" as m;
+@use "base/variables" as v;
+
+.no-proyectos {
+    a {
+        color: v.$indigo;
+    }
+}
+
+.listado-proyectos {
+    list-style: none;
+    padding: 0;
+    margin-top: 2rem;
+
+    @include m.grid(1, 2rem);
+
+    @include m.tablet {
+        @include m.grid(2, 2rem);
+    }
+    @include m.desktop {
+        @include m.grid(3, 2rem);
+    }
+
+    .proyecto {
+        background-color: lighten(v.$indigo, 5%);
+        min-height: 12rem;
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        align-items: center;
+        padding: 2rem;
+        line-height: 2;
+        border-radius: 0.4rem;
+        &:hover {
+            background-color: darken(v.$indigo, 5%);
+        }
+    }
+
+    a {
+        color: v.$blanco;
+    }
+    // .caja {
+    //     display: flex;
+    //     flex-direction: row-reverse;
+    //     justify-content: space-evenly;
+    //     align-items: center;
+    // }
+
+    .btn-eliminar {
+        @include m.boton(v.$rojo, v.$blanco);
+        border: none;
+        font-size: 1.4rem;
+        padding: 0.5rem 1rem;
+        text-transform: uppercase;
+        font-weight: 700;
+        border-radius: 0.5rem;
+    }
+}
